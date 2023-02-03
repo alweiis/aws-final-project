@@ -1,3 +1,4 @@
+<%@page import="com.example.demo.MyWebConfig"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@
 	업로드파일1:<input type="file" name="file1"><br>
 	업로드파일2:<input type="file" name="file2"><br>
 	<input type="submit" name="파일전송"><br>
-	<h3>c:/upload 폴더에 저장했습니다.</h3>
+	<h3><%= MyWebConfig.savePath %> 폴더에 저장했습니다.</h3>
 </form>
 </body>
 </html>
