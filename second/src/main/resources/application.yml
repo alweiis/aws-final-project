@@ -1,0 +1,30 @@
+# 서버포트
+server:
+  port: 8085
+
+# jsp 뷰 설정
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+# 파일 용량 제한 1mb
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+# MyBatis
+  datasource:
+    driver-class-name: ENC(atW4+WT1VmOgPlaHkT5NXrGdrW4wA0iQNbOhpjQeB1M=)
+    url: ENC(UObombg0mDutowrVlE0EO0JctjEn3ouqWQ/0AA+vNhokWie3vXkPkiLvw9bWgn1/t5evcC2Tx1E7saBUOTAmzGk6ALfp+H6ZBHiD5FzvXyi9cj+jn5J4yQ4vCpAVlamUW/DMNewNmYE=)
+    username: ENC(Gb11UpKkxKbVUBn+G54AItHWeI58Z6qu)
+    password: ENC(FAWgAyF/ShL8QW3gDU6uIxyExmAe9tYU)
+    
+jasypt:
+  encryptor:
+    bean: jasyptEncryptor
+    
+# SQL매핑
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*-mapping.xml
