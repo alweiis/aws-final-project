@@ -10,6 +10,8 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.MyWebConfig;
+
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
@@ -18,7 +20,7 @@ public class DownloadController {
 	@GetMapping("/filelist")
 	public ModelAndView downloadlist() {
 		ModelAndView mv = new ModelAndView();
-		File f = new File("c:/upload");
+		File f = new File(MyWebConfig.savePath);
 		String[] filelist = f.list();
 		
 		mv.addObject("filelist", filelist);
@@ -29,7 +31,7 @@ public class DownloadController {
 	@GetMapping("/filedownload")
 	public void filedownload(String onefile, HttpServletResponse response) throws IOException {
 		// onefile이라는 이름의 파일을 c:/upload 폴더에서 찾는다.
-		File f = new File("c:/upload/" + onefile);
+		File f = new File(MyWebConfig.savePath + onefile);
 		int fileLength = (int) f.length();	// byte 단위의 길이
 		
 		// 응답할 컨텐츠가 다운로드 파일임을 명시
